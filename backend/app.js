@@ -6,7 +6,8 @@ const userRoutes = require('./routes/user');
 const path = require('path');
  const swaggerUi = require('swagger-ui-express');
  const swaggerJSDoc = require('swagger-jsdoc');
-// const swaggerSpec = swaggerJSDoc({
+ const compression = require('compression')
+ // const swaggerSpec = swaggerJSDoc({
 //     explorer: true
 //   });
 

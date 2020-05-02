@@ -1,7 +1,7 @@
 {
   "name": "mean-blogging-api",
   "version": "1.0.0",
-  "engines":{
+  "engines": {
     "node": "14.0.0"
   },
   "scripts": {
@@ -12,6 +12,7 @@
     "bcrypt": "^4.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.6",
