@@ -29,7 +29,8 @@ var swaggerDefinition = {
   };
 
 const app = express();
-    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerJSDoc(options_swagger)));
+app.use(compression());
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerJSDoc(options_swagger)));
 
 //rrHBFZBZLouDAGSo
 //app db connection
