@@ -5,7 +5,8 @@
     "node": "14.0.0"
   },
   "scripts": {
-    "start": "nodemon ./backend/server.js"
+    "start": "nodemon ./backend/server.js",
+    "prod:deploy":"git push heroku master"
   },
   "private": true,
   "dependencies": {
