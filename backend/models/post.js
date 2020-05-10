@@ -4,7 +4,9 @@ const postSchema = mongoose.Schema({
     title: { type: String, required: true },
     content: { type: String, required: true },
     imagePath:{type:String,required:true},
-    createdBy:{type:mongoose.Schema.Types.ObjectId,required:true,ref:"User"}
+    createdBy:{type:mongoose.Schema.Types.ObjectId,required:true,ref:"User"},
+    tags:[String],
+    mentions:[String]
 
 },{timestamps:true});
 
