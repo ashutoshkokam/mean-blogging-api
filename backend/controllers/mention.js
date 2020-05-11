@@ -24,3 +24,24 @@ exports.addMentions = (mentions) => {
 exports.findAllMentionsText = () => {
   return Mention.find({}).select({ text: 1, _id: 0 });
 };
+
+exports.findAllMentionsByText = (req,res,next) => {
+  const searchTerm = String( req.query.searchTerm);
+  const searchCount = +req.query.searchCount;
+  //console.log(searchTerm);
+  //console.log(searchCount);
+  Mention.find({text:{$regex : "^" + searchTerm}})//
+   .limit(searchCount)
+   .then(mentions=>{
+     res.status(200).json({
+       message:"Mentions Fetched",
+       mentions:mentions
+     })
+   })
+   .catch(err=>{
+     res.status(500).json({
+       message:err,
+       mentions:[]
+     })
+   })
+};
