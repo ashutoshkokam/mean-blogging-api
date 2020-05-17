@@ -15,3 +15,25 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/ashutoshkokam/mean.git
 git push -u origin master
+
+
+
+{"id":"117245509494788490477","name":"Ashutosh K","email":"ashutoshv.kokam@gmail.com",
+"photoUrl":"https://lh3.googleusercontent.com/a-/AOh14GgEjZQ-hp_TeddOCc7tUULubnZnqomdMH-KFZsk6iM=s96-c",
+"firstName":"Ashutosh","lastName":"K",
+"authToken":"ya29.a0AfH6SMAEgUDXMwSGcvPdrYbWx_hcHCB1kwfkb0HSJoFeW531YLfWTJQnGAciYDsQiixEiweTLvwAAAwMP2-2aODd-ZcHTtF1THcVzIduXrg1oL2VNVCqPU2HbNjYlU41KOuKyFM6n4C2piThP7wF04zHDs_WTwGrvE8",
+"idToken":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImMxNzcxODE0YmE2YTcwNjkzZmI5NDEyZGEzYzZlOTBjMmJmNWI5MjciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiODQyNDc4NTMxNjcwLWZyanJybm9qYmMwZDRiNHE2NDRvM2VnZzdtOWw2NzFzLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiODQyNDc4NTMxNjcwLWZyanJybm9qYmMwZDRiNHE2NDRvM2VnZzdtOWw2NzFzLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE3MjQ1NTA5NDk0Nzg4NDkwNDc3IiwiZW1haWwiOiJhc2h1dG9zaHYua29rYW1AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJHTGI0YmRWN3VMUVpGUVpiUU9yNkV3IiwibmFtZSI6IkFzaHV0b3NoIEsiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2dFalpRLWhwX1RlZGRPQ2M3dFVVTHViblpucW9tZE1ILUtGWnNrNmlNPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFzaHV0b3NoIiwiZmFtaWx5X25hbWUiOiJLIiwibG9jYWxlIjoiZW4tR0IiLCJpYXQiOjE1ODkzODIxODYsImV4cCI6MTU4OTM4NTc4NiwianRpIjoiYjVkYTU0OWNiNTYxMDIyYjA3ZjM2MjM2MTFlNTM1ODY4ODVmYmRiOSJ9.OxVgg1Y4t_b_PeINpaJlIyfg_snHHYqcgeik-yg99qjfzrnX3h-vh5rb-HjXFQcrM6ZG8HpQlmameJby1qtdj0kFtVVaBK_1TXECSUAiOB2Mgmx8X6tQIKsP4gIce7zhk-68-rHlRA8jp2Ia1vJ0AqXV7mLPS3ljCzX_iODrVTREynA0Mg3zWPqMWH1KK7e-7yKm4QlV7WUb6NF0dWxCBZPIxxscKxqV6C7F9AMXxy0lb5unNKNgTdVomhpFvl7Uv6Yqug-hgog8XRERrYIgj16-xMGlmb5aJCjorrznCVvCb8qFi2hcjedrjBZsyVCE6YQXKXse9PX48OyIa7L3RQ",
+"provider":"GOOGLE"
+}
+
+{"id":"2878452455536538",
+"name":"Ashutosh Kokam",
+"email":"ashutoshv.kokam@gmail.com",
+"photoUrl":"https://graph.facebook.com/2878452455536538/picture?type=normal",
+"firstName":"Ashutosh",
+"lastName":"Kokam",
+"authToken":"EAAOCPaeAkgIBACGdGPoUa53bcBcyZBZBNFGiPTDuqJrsKZAZAlDaxGldHZBaA0i99l25aqht3k56J0HqlZCXoZA90ZAAggrAxd042XMKCNwNsaIZAEbJQanSJzOpB7ZA24OSAbG6tW5f1EXz0qlYe5DqKmJfKNBuvdntb7GFO73twtkfZBZCp7U0UZBl74JIdCLzfPVLHYnMyjJci4QZDZD",
+"facebook":{"name":"Ashutosh Kokam","email":"ashutoshv.kokam@gmail.com",
+"picture":{"data":{"height":50,"is_silhouette":false,"url":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=2878452455536538&height=50&width=50&ext=1592063861&hash=AeTDD4ckFAFn6IP6","width":50}},
+"first_name":"Ashutosh","last_name":"Kokam","id":"2878452455536538"},
+"provider":"FACEBOOK"}
