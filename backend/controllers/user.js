@@ -33,6 +33,7 @@ exports.createUser = (req, res, next) => {
 
 exports.login = (req, res, next) => {
     let fetchedUser;
+    //console.log(req.body.user)
     User.findOne({ email: req.body.user.email })
         .then((user) => {
            
@@ -56,12 +57,12 @@ exports.login = (req, res, next) => {
             const token = jwt.sign({ email: fetchedUser.email, userId: fetchedUser._id,userName:fetchedUser.userName }, 
                 process.env.SECRET_KEY, 
                 { expiresIn: "1h" });
-                console.log(token);
+                //console.log(token);
                 res.status(200).json(
                     {
                         token:token,
                         expiresIn:3600,
-                        userData:{...fetchedUser._doc,userId:fetchedUser._id,_id:null}
+                        userData:{...fetchedUser._doc,userId:fetchedUser._id}
                     });
         })
         .catch(err => {
@@ -88,3 +89,22 @@ exports.isUserExists = (req, res, next) => {
             })       
         })
     }
+    exports.isUserExistsByUserName = (req, res, next) => {
+        console.log(req.query.userName);
+        let searchString = String( req.query.userName);
+        User.findOne({userName: searchString})
+            .then((user) => {
+                console.log(user)
+                let isUserExists=false;
+                if(user)
+                    isUserExists=true;
+                return res.status(200).json({
+                    isUserExists:  isUserExists
+                })
+            })
+            .catch((err)=>{
+                return res.status(401).json({
+                    message: 'Invalid Data!'
+                })       
+            })
+        }
