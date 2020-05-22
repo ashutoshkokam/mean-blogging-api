@@ -94,7 +94,6 @@ exports.isUserExistsByUserName = (req, res, next) => {
   let searchString = String(req.query.userName);
   User.findOne({ userName: searchString })
     .then((user) => {
-      if (user) 
       return res.status(200).json({
         isUserExists: user ? true : false
       });
