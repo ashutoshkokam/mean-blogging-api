@@ -8,12 +8,17 @@ const extract = require('mention-hashtag')
 let fetchedPosts;
 
 exports.addPost = (req, res, next) => {
-  const url = req.protocol + "://" + req.get("host");
+  //const url = req.protocol + "://" + req.get("host");
+  let imagePath = req.body.imagePath;
+  if (req.file) {
+    const url = req.protocol + "://" + req.get("host");
+    imagePath = url + "/images/" + req.file.filename;
+  }
   const all = extract( utilities.removeLinebreaks( req.body.content), { symbol: false, unique: true, type: 'all' });
   const post = new Post({
     title: req.body.title,
     content: req.body.content,
-    imagePath: url + "/images/" + req.file.filename,
+    imagePath:imagePath,// url + "/images/" + req.file.filename,
     createdBy: req.userData.userId,
     tags:all.hashtags,
     mentions:all.mentions
@@ -25,8 +30,6 @@ exports.addPost = (req, res, next) => {
       Tag.addTags(all.hashtags);
       Mention.addMentions(all.mentions);
       res.status(201).json({
-          
-
         message: "Post added successfully",
         post: {
           ...createdPost,
@@ -95,7 +98,7 @@ exports.updatePost = (req, res, next) => {
   //console.log(tags);
   const all = extract( utilities.removeLinebreaks( req.body.content), { symbol: false, unique: true, type: 'all' });
 // all == { mentions: ['mention'], hashtags: ['hashtag'] }
-console.log(all);
+//console.log(all);
   const post = new Post({
     _id: req.body.id,
     title: req.body.title,
