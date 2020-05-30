@@ -3,7 +3,7 @@ const Tag = require("../controllers/tags");
 const Mention = require("../controllers/mention");
 const utilities = require("../utils/utilities");
 
-const extract = require('mention-hashtag')
+const extract = require("mention-hashtag");
 
 let fetchedPosts;
 
@@ -14,14 +14,20 @@ exports.addPost = (req, res, next) => {
     const url = req.protocol + "://" + req.get("host");
     imagePath = url + "/images/" + req.file.filename;
   }
-  const all = extract( utilities.removeLinebreaks( req.body.content), { symbol: false, unique: true, type: 'all' });
+  const all = extract(utilities.removeLinebreaks(req.body.content), {
+    symbol: false,
+    unique: true,
+    type: "all",
+  });
   const post = new Post({
     title: req.body.title,
     content: req.body.content,
-    imagePath:imagePath,// url + "/images/" + req.file.filename,
+    imagePath: imagePath, // url + "/images/" + req.file.filename,
     createdBy: req.userData.userId,
-    tags:all.hashtags,
-    mentions:all.mentions
+    tags: all.hashtags,
+    mentions: all.mentions,
+    postVolumeInfo: req.body.postVolumeInfo,
+    rating: req.body.rating,
   });
   post
     .save()
@@ -96,9 +102,13 @@ exports.updatePost = (req, res, next) => {
   }
   //const tags = req.body.content.match(/#[a-z0-9_]+/g);
   //console.log(tags);
-  const all = extract( utilities.removeLinebreaks( req.body.content), { symbol: false, unique: true, type: 'all' });
-// all == { mentions: ['mention'], hashtags: ['hashtag'] }
-//console.log(all);
+  const all = extract(utilities.removeLinebreaks(req.body.content), {
+    symbol: false,
+    unique: true,
+    type: "all",
+  });
+  // all == { mentions: ['mention'], hashtags: ['hashtag'] }
+  //console.log(all);
   const post = new Post({
     _id: req.body.id,
     title: req.body.title,
@@ -106,7 +116,9 @@ exports.updatePost = (req, res, next) => {
     imagePath: imagePath,
     createdBy: req.userData.userId,
     tags: all.hashtags,
-    mentions:all.mentions,
+    mentions: all.mentions,
+    postVolumeInfo: req.body.postVolumeInfo,
+    rating: req.body.rating,
   });
   Post.updateOne({ _id: req.params.id, createdBy: post.createdBy }, post)
     .then((result) => {
@@ -144,4 +156,3 @@ exports.getPost = (req, res, next) => {
       res.status(500).json({ message: "Fetching Post Failed!" });
     });
 };
-  
