@@ -16,7 +16,7 @@ const compression = require("compression");
 
 var swaggerDefinition = {
   info: {
-    title: "Node Swagger API",
+    title: "Node Swagger API v1",
     version: "1.0.0",
     description: "Demonstrating how to describe a RESTful API with Swagger",
   },
